@@ -15,9 +15,7 @@ def tiktok():
     return jsonify({"error": "URL is required"}), 400
   
   ssstik_result = ssstik(url)
-  return jsonify({"result": {
-    "video": ssstik_result[1],
-    "mp3": ssstik_result[2]}}), 200
+  return jsonify({"video": ssstik_result[1],"mp3": ssstik_result[2]}), 200
 
   
 @app.route('/api/instagram', methods=["GET"])
@@ -27,9 +25,7 @@ def ig():
     return jsonify({"error": "URL is required"}), 400
   
   ig_result = sssig(url)
-  return jsonify({"result": {
-    "video": ig_result[0],
-    "thumbnail": ig_result[1]}}), 200
+  return jsonify({"video": ig_result[0],"thumbnail": ig_result[1]}), 200
     
 if __name__ == "__main__":
   app.run(debug=True, host="0.0.0.0", port="8080")
