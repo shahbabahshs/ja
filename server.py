@@ -16,8 +16,8 @@ def tiktok():
   
   ssstik_result = ssstik(url)
   return jsonify({"result": {
-    "mp4": ssstik_result[1],
-    "video": ssstik_result[2]}}), 200
+    "video": ssstik_result[1],
+    "mp3": ssstik_result[2]}}), 200
 
   
 @app.route('/api/instagram', methods=["GET"])
