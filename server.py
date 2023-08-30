@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return jsonify({'/api/tiktok?url='})
+  return jsonify({/api/tiktok?url='})
 
 @app.route('/api/tiktok', methods=["GET"])
 def tiktok():
