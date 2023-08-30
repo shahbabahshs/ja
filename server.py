@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return jsonify({/api/tiktok?url='})
+  return '/api/tiktok?url='
 
 @app.route('/api/tiktok', methods=["GET"])
 def tiktok():
@@ -26,3 +26,6 @@ def ig():
   
   ig_result = sssig(url)
   return jsonify({"video": ig_result[0],"thumbnail": ig_result[1]}), 200
+
+if __name__ == "__main__":
+  app.run(debug=True, host="0.0.0.0", port="8080")
