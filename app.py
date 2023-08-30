@@ -26,3 +26,12 @@ def ig():
   
   ig_result = sssig(url)
   return jsonify({"video": ig_result[0],"thumbnail": ig_result[1]})
+
+
+@app.errorhandler(404)
+def error_404(e):
+    return 'Error 404', 404
+
+@app.errorhandler(500)
+def error_500(e):
+    return 'Internal Server Error', 500
