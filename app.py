@@ -1,4 +1,4 @@
-oifrom tiktokdown import ssstik
+from tiktokdown import ssstik
 from igdown import sssig
 from flask import *
 
