@@ -2,7 +2,7 @@ from httpx import AsyncClient
 from requests import Session
 import re
 from base64 import b64decode
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 class SsstikIO(Session):
     def get_media(self, url):
