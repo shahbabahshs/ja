@@ -1,5 +1,5 @@
 from tiktokdown import ssstik
-from igdown import sssig
+from igdown import igdown as sssig
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
