@@ -7,7 +7,7 @@ class IG_Down(Session):
     soup = BeautifulSoup(ses.content, 'html.parser')
     form = soup.find('form')
     if form:
-      token = form.find('textarea', {'name': 'url'})['required']
+      token = form.find('input', {'name': 'url'})['required']
       download_response = self.post('https://gnome-connected-tropical-clients.trycloudflare.com/', data={
         'url': url,
         'token': token,
@@ -29,11 +29,12 @@ class IG_Down(Session):
         'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) ' 'AppleWebKit/537.36 (KHTML, like Gecko)' ' Chrome/115.0.0.0 Mobile Safari/537.36'
       })
       download_soup = BeautifulSoup(download_response.content, 'html.parser')
-      video_link = download_soup.find('a')['href']
-      thumbnail = download_soup.find('img')['src']
-      return [video_link,thumbnail]
+      sc = download_soup.find('div', {'class': 'container mt-5'})
+      video_link = sc.find('a')['href']
+      print(video_link)
+      return [video_link]
     else:
       return ["Form not found on the page."]
       
-def sssig(url):
+def igdown(url):
     return IG_Down().get_media(url)
