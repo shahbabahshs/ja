@@ -25,7 +25,7 @@ def ig():
     return jsonify({"error": "URL is required"}), 400
   
   ig_result = sssig(url)
-  return jsonify({"video": ig_result[0],"thumbnail": ig_result[1]})
+  return f'{ig_result[0]}'
 
 
 @app.errorhandler(404)
