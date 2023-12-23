@@ -11,7 +11,8 @@ class SsstikIO(Session):
             'https://ssstik.io/abc?url=dl', data={
                 'id': url,
                 'locale': 'en',
-                'tt': re.findall(r'tt:\'([\w\d]+)\'', ses.text)[0],
+                'tt': ses.text,
+                #'tt': re.findall(r'tt:\'([\w\d]+)\'', ses.text)[0],
             },
             headers={
                 'hx-current-url': 'https://ssstik.io/id',
