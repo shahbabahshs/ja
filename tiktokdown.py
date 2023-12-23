@@ -36,7 +36,7 @@ class SsstikIO(Session):
         )
         download_soup = BeautifulSoup(resp.content, 'html.parser')
         video_link = download_soup.find('a')['href']
-        return {f'[video_link]'}
+        return {f'{[video_link]}'}
         #return [
             #(b64decode('/'.join(x.split('/')[5:])).decode() if 'ssscdn.io' in x else x)
             #for x in set(re.findall('href="(.*?)"', resp.text))
