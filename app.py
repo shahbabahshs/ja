@@ -15,7 +15,7 @@ def tiktok():
     return jsonify({"error": "URL is required"}), 400
   
   ssstik_result = ssstik(url)
-  return ssstik_result
+  return ssstik_result[0]
 
   
 @app.route('/api/instagram', methods=["GET"])
