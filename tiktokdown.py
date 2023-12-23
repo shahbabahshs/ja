@@ -36,7 +36,7 @@ class SsstikIO(Session):
         )
         download_soup = BeautifulSoup(resp.content, 'html.parser')
         video_link = download_soup.find('a')['href']
-        return {f'{[video_link][0]}'}
+        return [video_link][0]
         
 
 def ssstik(url):
